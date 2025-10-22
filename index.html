@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TonVendas Oferta Relampago Aproveite — Maquininhas Ton Oficiais | Frete Grátis Brasil 🚀</title>
+  <title>TON OFERTA RELÂMPAGO — Maquininhas Ton Oficiais | Frete Grátis Brasil 🚀</title>
   <meta name="description" content="Adquira sua maquininha Ton com as melhores taxas do mercado. T2, T3, T3 Smart TON PRÓ e T3 Smart TON SUPER com frete grátis para todo o Brasil." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
     :root {
       /* Cores oficiais Ton conforme guidelines */
       --ton-green: #00D700;
-      --ton-dark-green: #00A84F;
+      --ton-dark-green: #006B24; /* ALTERADO: Verde mais escuro */
       --ton-light-green: #E5FFF3;
       --ton-black: #1A1A1A;
       --bg: #FAFAFA;
@@ -49,10 +49,10 @@
     }
 
     .site-header {
-      background: linear-gradient(135deg, var(--ton-green) 0%, var(--ton-dark-green) 100%);
+      background: linear-gradient(135deg, #006B24 0%, #004A19 100%); /* ALTERADO: Verde mais escuro */
       color: white;
       padding: 32px 0;
-      box-shadow: 0 4px 16px rgba(0, 215, 0, 0.2);
+      box-shadow: 0 4px 16px rgba(0, 107, 36, 0.4);
     }
 
     .header-content {
@@ -164,7 +164,7 @@
     .product-card.featured {
       grid-column: 1 / -1;
       max-width: 100%;
-      background: white; /* ALTERADO: de verde para branco */
+      background: white;
       border: 4px solid var(--ton-green);
       box-shadow: 0 12px 48px rgba(0, 215, 0, 0.4);
       transform: scale(1.02);
@@ -194,55 +194,76 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
-      align-items: center;
+      align-items: flex-start; /* ALTERADO: para permitir botão no topo */
       padding: 48px 40px;
-      color: var(--text-primary); /* ALTERADO: de branco para preto */
+      color: var(--text-primary);
+    }
+
+    /* NOVA ESTRUTURA: Botão abaixo do badge MAIS VENDIDA */
+    .product-card.featured .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .product-card.featured .cta-section {
+      text-align: center;
+      margin-top: -10px; /* Aproximar do badge */
+      margin-bottom: 20px;
+    }
+
+    .product-card.featured .product-info {
+      flex: 1;
     }
 
     .product-card.featured .product-name {
-      color: var(--ton-dark-green); /* ALTERADO: de branco para verde escuro */
+      color: var(--ton-dark-green);
       font-size: 42px;
-      text-shadow: none; /* REMOVIDO: sombra branca */
+      text-shadow: none;
+      margin-bottom: 12px;
     }
 
     .product-card.featured .product-slogan {
-      color: var(--text-secondary); /* ALTERADO: de branco para cinza */
+      color: var(--text-secondary);
       font-size: 18px;
     }
 
     .product-card.featured .features-list li {
-      color: var(--text-primary); /* ALTERADO: de branco para preto */
+      color: var(--text-primary);
       font-size: 16px;
       font-weight: 500;
     }
 
     .product-card.featured .features-list li::before {
-      color: var(--ton-green); /* Mantido verde */
+      color: var(--ton-green);
       font-size: 22px;
     }
 
     .product-card.featured .highlight-feature {
-      background: var(--ton-light-green); /* ALTERADO: fundo verde claro */
+      background: var(--ton-light-green);
       border-left-color: var(--ton-green);
-      backdrop-filter: none; /* REMOVIDO: efeito blur */
+      backdrop-filter: none;
     }
 
     .product-card.featured .highlight-feature strong {
-      color: var(--ton-dark-green); /* ALTERADO: verde escuro */
+      color: var(--ton-dark-green);
       font-size: 18px;
     }
 
     .product-card.featured .highlight-feature span {
-      color: var(--text-secondary); /* ALTERADO: cinza */
+      color: var(--text-secondary);
       font-size: 15px;
     }
 
     .product-card.featured .btn-primary {
-      background: linear-gradient(135deg, var(--ton-green) 0%, var(--ton-dark-green) 100%); /* ALTERADO: verde ao invés de dourado */
+      background: linear-gradient(135deg, var(--ton-green) 0%, var(--ton-dark-green) 100%);
       color: white;
-      font-size: 20px;
-      padding: 24px;
+      font-size: 18px;
+      padding: 20px 32px;
       box-shadow: 0 8px 24px rgba(0, 215, 0, 0.4);
+      margin: 0 auto;
+      max-width: 400px;
+      display: block;
     }
 
     .product-card.featured .btn-primary:hover {
@@ -251,7 +272,7 @@
     }
 
     .product-card.featured .product-image-wrapper {
-      background: var(--ton-light-green); /* ALTERADO: fundo verde claro */
+      background: var(--ton-light-green);
       backdrop-filter: none;
       border-radius: var(--radius);
       padding: 40px;
@@ -408,13 +429,13 @@
     }
 
     .mei-banner {
-      background: linear-gradient(135deg, var(--ton-green) 0%, var(--ton-dark-green) 100%);
+      background: linear-gradient(135deg, #006B24 0%, #004A19 100%); /* ALTERADO: Verde mais escuro */
       color: white;
       border-radius: var(--radius);
       padding: 48px 40px;
       text-align: center;
       margin: 48px 0;
-      box-shadow: 0 8px 32px rgba(0, 215, 0, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 107, 36, 0.5);
     }
 
     .mei-banner h2 {
@@ -434,7 +455,7 @@
       max-width: 400px;
       margin: 24px auto 0;
       background: white;
-      color: var(--ton-green);
+      color: #006B24;
     }
 
     .mei-banner .btn-primary:hover {
@@ -593,7 +614,7 @@
       }
 
       .brand {
-        font-size: 26px;
+        font-size: 22px; /* Reduzido para caber melhor */
       }
 
       .tagline {
@@ -673,7 +694,7 @@
       <div class="header-content">
         <div>
           <h1 class="brand">
-            <span class="brand-emoji">💚</span>TonVendas
+            <span class="brand-emoji">⚡</span>TON OFERTA RELÂMPAGO, SÓ HOJE, APROVEITE!
           </h1>
           <p class="tagline">Maquininhas oficiais Ton com as melhores condições</p>
         </div>
@@ -799,7 +820,7 @@
         <span class="footer-badge">🔄 Informações sempre atualizadas</span>
       </div>
       <p style="margin-top: 24px; font-size: 15px;">
-        <strong>TonVendas © 2025</strong> - Todos os direitos reservados
+        <strong>TON OFERTA RELÂMPAGO © 2025</strong> - Todos os direitos reservados
       </p>
       <p style="font-size: 13px; opacity: 0.7;">
         Revendedor autorizado Ton. Links de compra vinculados.
