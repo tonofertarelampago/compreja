@@ -1,6 +1,6 @@
 /**
  * TonVendas - Frontend JavaScript Atualizado
- * Informações corretas das maquininhas conforme site oficial Ton
+ * LAYOUT REORGANIZADO: Botões após os nomes das maquininhas
  */
 
 const PRODUCTS_CONTAINER = document.getElementById('products-container');
@@ -14,8 +14,7 @@ const PRODUCT_IMAGES = {
   'T3 Smart TON SUPER': 'https://sites-cms-deco-prd.s3.us-east-1.amazonaws.com/optimized/ton/d109918b-0c7e-4bf0-b016-e2202146e6de/maquininha-t3-smart-right.webp'
 };
 
-// Dados corretos das maquininhas conforme imagens fornecidas
-// T3 SMART TON PRÓ SEMPRE PRIMEIRO!
+// Dados corretos das maquininhas
 const PRODUCTS_DATA = [
   {
     id: 'T3-Smart-Pro',
@@ -97,7 +96,6 @@ const PRODUCTS_DATA = [
     },
     buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_D195_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
   },
-  // NOVA MAQUININHA: T3 SMART TON SUPER
   {
     id: 'T3-Smart-Super',
     name: 'T3 Smart TON SUPER',
@@ -128,6 +126,7 @@ const PRODUCTS_DATA = [
 
 /**
  * Renderiza os cards das maquininhas
+ * LAYOUT ATUALIZADO: Botão logo após o nome da maquininha
  */
 function renderProducts(products) {
   if (!products || products.length === 0) {
@@ -145,12 +144,20 @@ function renderProducts(products) {
     
     if (product.featured) {
       // LAYOUT ESPECIAL PARA T3 SMART TON PRÓ
+      // BOTÃO LOGO APÓS O SLOGAN
       return `
         <div class="product-card ${featuredClass}">
           <div class="product-content">
             <div>
               <h3 class="product-name">${product.fullName}</h3>
               <p class="product-slogan">${product.slogan}</p>
+              
+              <a href="${product.buyLink}" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn-primary">
+                🛒 PEDIR T3 SMART TON PRÓ AGORA
+              </a>
               
               <ul class="features-list">
                 ${product.features.map(feature => `<li>${feature}</li>`).join('')}
@@ -160,13 +167,6 @@ function renderProducts(products) {
                 <strong>${product.highlight.title}</strong>
                 <span>${product.highlight.description}</span>
               </div>
-
-              <a href="${product.buyLink}" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="btn-primary">
-                🛒 Pedir ${product.name} Agora
-              </a>
             </div>
             
             <div class="product-image-wrapper">
@@ -179,6 +179,7 @@ function renderProducts(products) {
     }
     
     // LAYOUT NORMAL PARA OUTRAS MAQUININHAS
+    // BOTÃO LOGO APÓS O SLOGAN
     return `
       <div class="product-card">
         <div class="product-image-wrapper">
@@ -189,6 +190,13 @@ function renderProducts(products) {
           <h3 class="product-name">${product.fullName}</h3>
           <p class="product-slogan">${product.slogan}</p>
           
+          <a href="${product.buyLink}" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-primary">
+            🛒 PEDIR ${product.name.toUpperCase()}
+          </a>
+          
           <ul class="features-list">
             ${product.features.map(feature => `<li>${feature}</li>`).join('')}
           </ul>
@@ -197,13 +205,6 @@ function renderProducts(products) {
             <strong>${product.highlight.title}</strong>
             <span>${product.highlight.description}</span>
           </div>
-
-          <a href="${product.buyLink}" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn-primary">
-            🛒 Pedir ${product.name}
-          </a>
         </div>
       </div>
     `;
@@ -243,6 +244,8 @@ function renderComparisonTable(products) {
  */
 document.addEventListener('DOMContentLoaded', () => {
   console.log('✅ TonVendas inicializado - Dados sincronizados com Ton oficial');
+  console.log('🎨 LAYOUT ATUALIZADO: Botões após os nomes das maquininhas');
+  console.log('📦 Container Premium REDUZIDO');
   
   setTimeout(() => {
     renderProducts(PRODUCTS_DATA);
