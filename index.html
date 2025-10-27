@@ -160,13 +160,14 @@
       margin-bottom: 48px;
     }
 
-    /* MEI BANNER - PRIMEIRO ITEM FIXO */
+    /* MEI BANNER - AGORA COMO PRIMEIRO ITEM */
     .mei-banner {
       background: linear-gradient(135deg, #006B24 0%, #004A19 100%);
       color: white;
       border-radius: var(--radius);
       padding: 48px 40px;
       text-align: center;
+      margin-bottom: 32px;
       box-shadow: 0 8px 32px rgba(0, 107, 36, 0.5);
       grid-column: 1 / -1;
     }
@@ -189,13 +190,14 @@
       margin: 24px auto 0;
       background: white;
       color: #006B24;
+      order: 0;
     }
 
     .mei-banner .btn-primary:hover {
       background: #f0f0f0;
     }
 
-    /* CARD PREMIUM - T3 SMART TON PRÓ EM DESTAQUE */
+    /* CARD PREMIUM - T3 SMART TON PRÓ EM DESTAQUE (REDUZIDO) */
     .product-card.featured {
       grid-column: 1 / -1;
       max-width: 100%;
@@ -585,6 +587,7 @@
     .loading {
       text-align: center;
       padding: 60px 20px;
+      grid-column: 1 / -1;
     }
 
     .spinner {
@@ -711,7 +714,7 @@
     <section class="products-section">
       <h2 class="section-title">💳 Escolha sua Maquininha</h2>
       <div class="product-grid" id="products-container">
-        <!-- TON MAX MEI/PJ - SEMPRE PRIMEIRO (FIXO NO HTML) -->
+        <!-- TON MAX MEI/PJ - PRIMEIRO ITEM -->
         <div class="mei-banner">
           <h2>🏆 Ton Max - Para MEI e PJ</h2>
           <p>Condições especiais para quem é registrado!</p>
@@ -724,7 +727,7 @@
           </a>
         </div>
 
-        <!-- LOADING PLACEHOLDER (será substituído pelo JavaScript) -->
+        <!-- LOADING PLACEHOLDER -->
         <div class="loading">
           <div class="spinner"></div>
           <p>Carregando maquininhas...</p>
