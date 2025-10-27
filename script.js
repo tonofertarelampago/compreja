@@ -45,6 +45,32 @@ const PRODUCTS_DATA = [
     buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_SMART_POS_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
   },
   {
+    id: 'T3-Smart-Super',
+    name: 'T3 Smart TON SUPER',
+    fullName: 'Maquininha T3 Smart TON SUPER',
+    badge: 'SUPER',
+    slogan: 'Por dentro da T3 Smart',
+    connectivity: 'Chip 4G e Wi-Fi',
+    nfc: 'Sim',
+    receipt: 'Impresso ou SMS',
+    featured: false,
+    features: [
+      'Bateria de longa duração - Pra não ficar sem bateria na hora de vender',
+      'Rápida e inteligente - Com sistema operacional Android',
+      'Chip 4G grátis - Sem nenhum custo adicional',
+      'Conexão Wi-Fi - Pra você nunca ficar desconectado',
+      'Bobina grátis - Imprima ou envie por sms o comprovante da venda',
+      'Receba por aproximação (NFC) - Venda mais rápido e diminua as filas',
+      'Receba por Pix - Pix QR Code ou Pix por aproximação',
+      'Tela touch - Interface ágil e precisa para operações rápidas'
+    ],
+    highlight: {
+      title: '⚡ Sistema Android com Tela Touch',
+      description: 'Interface ágil e precisa para operações rápidas'
+    },
+    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONSUPER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonsuper&utm_medium=invite_share&utm_source=revendedor'
+  }, 
+  {
     id: 'T3',
     name: 'T3',
     fullName: 'Maquininha T3',
@@ -96,32 +122,6 @@ const PRODUCTS_DATA = [
     },
     buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_D195_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
   },
-  {
-    id: 'T3-Smart-Super',
-    name: 'T3 Smart TON SUPER',
-    fullName: 'Maquininha T3 Smart TON SUPER',
-    badge: 'SUPER',
-    slogan: 'Por dentro da T3 Smart',
-    connectivity: 'Chip 4G e Wi-Fi',
-    nfc: 'Sim',
-    receipt: 'Impresso ou SMS',
-    featured: false,
-    features: [
-      'Bateria de longa duração - Pra não ficar sem bateria na hora de vender',
-      'Rápida e inteligente - Com sistema operacional Android',
-      'Chip 4G grátis - Sem nenhum custo adicional',
-      'Conexão Wi-Fi - Pra você nunca ficar desconectado',
-      'Bobina grátis - Imprima ou envie por sms o comprovante da venda',
-      'Receba por aproximação (NFC) - Venda mais rápido e diminua as filas',
-      'Receba por Pix - Pix QR Code ou Pix por aproximação',
-      'Tela touch - Interface ágil e precisa para operações rápidas'
-    ],
-    highlight: {
-      title: '⚡ Sistema Android com Tela Touch',
-      description: 'Interface ágil e precisa para operações rápidas'
-    },
-    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONSUPER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonsuper&utm_medium=invite_share&utm_source=revendedor'
-  }
 ];
 
 /**
