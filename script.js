@@ -27,7 +27,7 @@ const PRODUCTS_DATA = [
     receipt: 'Impresso ou SMS',
     featured: true,
     features: [
-      'Frete e troca grátis pra todo o Brasil',
+      'Frete e troca grátis para todo o Brasil',
       'Com Chip 4G e Wi-Fi',
       'Receba por aproximação (NFC)',
       'Comprovante impresso ou SMS',
@@ -55,7 +55,7 @@ const PRODUCTS_DATA = [
     receipt: 'Impresso ou SMS',
     featured: false,
     features: [
-      'Frete e troca grátis pra todo o Brasil',
+      'Frete e troca grátis para todo o Brasil',
       'Com Chip 3G e Wi-Fi',
       'Receba por aproximação (NFC)',
       'Comprovante impresso ou SMS',
@@ -81,7 +81,7 @@ const PRODUCTS_DATA = [
     receipt: 'SMS apenas',
     featured: false,
     features: [
-      'Frete e troca grátis pra todo o Brasil',
+      'Frete e troca grátis para todo o Brasil',
       'Com Chip 3G e Wi-Fi',
       'Receba por aproximação (NFC)',
       'Comprovante por SMS',
