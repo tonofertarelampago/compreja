@@ -190,11 +190,11 @@
       margin: 24px auto 0;
       background: white;
       color: #006B24;
-      order: 0;
     }
 
     .mei-banner .btn-primary:hover {
       background: #f0f0f0;
+      transform: scale(1.02);
     }
 
     /* CARD PREMIUM - T3 SMART TON PRÓ EM DESTAQUE (REDUZIDO) */
@@ -412,7 +412,6 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 20px;
-      order: -1;
     }
 
     .btn-primary:hover {
@@ -698,7 +697,7 @@
           <h1 class="brand">
             <span class="brand-emoji">⚡</span>TON OFERTA RELÂMPAGO, APROVEITE!
           </h1>
-          <p class="tagline">  Maquininhas oficiais Ton com as melhores condições.</p>
+          <p class="tagline">Maquininhas oficiais Ton com as melhores condições.</p>
         </div>
       </div>
     </div>
@@ -713,20 +712,22 @@
 
     <section class="products-section">
       <h2 class="section-title">💳 Escolha sua Maquininha</h2>
-      <div class="product-grid" id="products-container">
-        <!-- TON MAX MEI/PJ - PRIMEIRO ITEM -->
-        <div class="mei-banner">
-      <h2>🏆 Ton Max - Para MEI e PJ</h2>
-      <p>Condições especiais para quem é registrado!</p>
-      <p style="font-size: 16px; opacity: 0.9;">Taxas diferenciadas de acordo com suas vendas mensais</p>
-      <a href="https://ton.com.br/checkout/cart/?productId=TONMAXMEI_TIER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonmaxmei_tier&utm_medium=invite_share&utm_source=revendedor" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="btn-primary">
-        🚀 Solicitar Ton Max MEI/PJ
-      </a>
-    </div>
+      
+      <!-- TON MAX MEI/PJ - FORA DO GRID DINÂMICO -->
+      <div class="mei-banner">
+        <h2>🏆 Ton Max - Para MEI e PJ</h2>
+        <p>Condições especiais para quem é registrado!</p>
+        <p style="font-size: 16px; opacity: 0.9;">Taxas diferenciadas de acordo com suas vendas mensais</p>
+        <a href="https://ton.com.br/checkout/cart/?productId=TONMAXMEI_TIER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonmaxmei_tier&utm_medium=invite_share&utm_source=revendedor" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-primary">
+          🚀 Solicitar Ton Max MEI/PJ
+        </a>
+      </div>
 
+      <!-- GRID DINÂMICO DE PRODUTOS -->
+      <div class="product-grid" id="products-container">
         <!-- LOADING PLACEHOLDER -->
         <div class="loading">
           <div class="spinner"></div>
