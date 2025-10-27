@@ -1,6 +1,8 @@
-/**
- * TonVendas - Frontend JavaScript Atualizado
- * LAYOUT REORGANIZADO: Botões após os nomes das maquininhas
+ /**
+ * TonVendas - Script Corrigido
+ * CORREÇÕES:
+ * 1. Container Ton Max MEI/PJ agora aparece (fixo no HTML)
+ * 2. T3 Smart TON SUPER é o primeiro após o Premium
  */
 
 const PRODUCTS_CONTAINER = document.getElementById('products-container');
@@ -14,7 +16,7 @@ const PRODUCT_IMAGES = {
   'T3 Smart TON SUPER': 'https://sites-cms-deco-prd.s3.us-east-1.amazonaws.com/optimized/ton/d109918b-0c7e-4bf0-b016-e2202146e6de/maquininha-t3-smart-right.webp'
 };
 
-// Dados corretos das maquininhas
+// ORDEM CORRIGIDA: T3 Smart TON PRÓ (destaque), T3 Smart TON SUPER, T3, T2
 const PRODUCTS_DATA = [
   {
     id: 'T3-Smart-Pro',
@@ -27,7 +29,7 @@ const PRODUCTS_DATA = [
     receipt: 'Impresso ou SMS',
     featured: true,
     features: [
-      'Frete e troca grátis para todo o Brasil',
+      'Frete e troca grátis pra todo o Brasil',
       'Com Chip 4G e Wi-Fi',
       'Receba por aproximação (NFC)',
       'Comprovante impresso ou SMS',
@@ -43,58 +45,6 @@ const PRODUCTS_DATA = [
       description: 'Tela touchscreen colorida, bateria de longa duração e conexão 4G'
     },
     buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_SMART_POS_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
-  },
-  {
-    id: 'T3',
-    name: 'T3',
-    fullName: 'Maquininha T3',
-    badge: 'POPULAR',
-    slogan: 'A maquininha parceira do empreendedor brasileiro',
-    connectivity: 'Chip 3G e Wi-Fi',
-    nfc: 'Sim',
-    receipt: 'Impresso ou SMS',
-    featured: false,
-    features: [
-      'Frete e troca grátis para todo o Brasil',
-      'Com Chip 3G e Wi-Fi',
-      'Receba por aproximação (NFC)',
-      'Comprovante impresso ou SMS',
-      'Venda pelo App com TapTon, Link e Pix',
-      'Aceite Pix na Maquininha',
-      'Chip com internet ilimitada e grátis',
-      'Garantia ilimitada'
-    ],
-    highlight: {
-      title: '🖨️ Com impressora integrada',
-      description: 'Emita comprovantes impressos para seus clientes'
-    },
-    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_S920_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
-  },
-  {
-    id: 'T2',
-    name: 'T2',
-    fullName: 'Maquininha T2',
-    badge: 'COMPACTA',
-    slogan: 'A maquininha compacta que tá sempre com você',
-    connectivity: 'Chip 3G e Wi-Fi',
-    nfc: 'Sim',
-    receipt: 'SMS apenas',
-    featured: false,
-    features: [
-      'Frete e troca grátis para todo o Brasil',
-      'Com Chip 3G e Wi-Fi',
-      'Receba por aproximação (NFC)',
-      'Comprovante por SMS',
-      'Venda pelo App com TapTon, Link e Pix',
-      'Aceite Pix na Maquininha',
-      'Chip com internet ilimitada e grátis',
-      'Garantia ilimitada'
-    ],
-    highlight: {
-      title: '📱 Ideal para vendas móveis',
-      description: 'Perfeita para quem está sempre em movimento'
-    },
-    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_D195_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
   },
   {
     id: 'T3-Smart-Super',
@@ -120,97 +70,162 @@ const PRODUCTS_DATA = [
       title: '⚡ Sistema Android com Tela Touch',
       description: 'Interface ágil e precisa para operações rápidas'
     },
-    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONSUPER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonsuper&utm_medium=invite_share&utm_source=revendedor'
+    buyLink: 'https://www.ton.com.br/checkout/cart/?referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonsuper&utm_medium=invite_share&utm_source=revendedor'
+  },
+  {
+    id: 'T3',
+    name: 'T3',
+    fullName: 'Maquininha T3',
+    badge: 'POPULAR',
+    slogan: 'A maquininha parceira do empreendedor brasileiro',
+    connectivity: 'Chip 3G e Wi-Fi',
+    nfc: 'Sim',
+    receipt: 'Impresso ou SMS',
+    featured: false,
+    features: [
+      'Frete e troca grátis pra todo o Brasil',
+      'Com Chip 3G e Wi-Fi',
+      'Receba por aproximação (NFC)',
+      'Comprovante impresso ou SMS',
+      'Venda pelo App com TapTon, Link e Pix',
+      'Aceite Pix na Maquininha',
+      'Chip com internet ilimitada e grátis',
+      'Garantia ilimitada'
+    ],
+    highlight: {
+      title: '🖨️ Com impressora integrada',
+      description: 'Emita comprovantes impressos para seus clientes'
+    },
+    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_S920_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
+  },
+  {
+    id: 'T2',
+    name: 'T2',
+    fullName: 'Maquininha T2',
+    badge: 'COMPACTA',
+    slogan: 'A maquininha compacta que tá sempre com você',
+    connectivity: 'Chip 3G e Wi-Fi',
+    nfc: 'Sim',
+    receipt: 'SMS apenas',
+    featured: false,
+    features: [
+      'Frete e troca grátis pra todo o Brasil',
+      'Com Chip 3G e Wi-Fi',
+      'Receba por aproximação (NFC)',
+      'Comprovante por SMS',
+      'Venda pelo App com TapTon, Link e Pix',
+      'Aceite Pix na Maquininha',
+      'Chip com internet ilimitada e grátis',
+      'Garantia ilimitada'
+    ],
+    highlight: {
+      title: '📱 Ideal para vendas móveis',
+      description: 'Perfeita para quem está sempre em movimento'
+    },
+    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_D195_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
   }
 ];
 
 /**
  * Renderiza os cards das maquininhas
- * LAYOUT ATUALIZADO: Botão logo após o nome da maquininha
+ * NOTA: O banner MEI/PJ já está fixo no HTML e sempre aparece primeiro
  */
 function renderProducts(products) {
   if (!products || products.length === 0) {
-    PRODUCTS_CONTAINER.innerHTML = `
+    PRODUCTS_CONTAINER.innerHTML = \`
+      <div class="mei-banner">
+        <h2>🏆 Ton Max - Para MEI e PJ</h2>
+        <p>Condições especiais para quem é registrado!</p>
+        <p style="font-size: 16px; opacity: 0.9;">Taxas diferenciadas de acordo com suas vendas mensais</p>
+        <a href="https://ton.com.br/checkout/cart/?productId=TONMAXMEI_TIER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonmaxmei_tier&utm_medium=invite_share&utm_source=revendedor" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-primary">
+          🚀 Solicitar Ton Max MEI/PJ
+        </a>
+      </div>
       <div style="text-align:center;color:#666;padding:40px;grid-column:1/-1;">
         <p>Nenhum produto disponível no momento.</p>
       </div>
-    `;
+    \`;
     return;
   }
 
+  // Manter o banner MEI/PJ e adicionar as maquininhas
+  const meiBanner = document.querySelector('.mei-banner');
+  
   const html = products.map(product => {
     const imageSrc = PRODUCT_IMAGES[product.name] || PRODUCT_IMAGES['T3 Smart TON PRÓ'];
     const featuredClass = product.featured ? 'featured' : '';
     
     if (product.featured) {
-      // LAYOUT ESPECIAL PARA T3 SMART TON PRÓ
-      // BOTÃO LOGO APÓS O SLOGAN
-      return `
-        <div class="product-card ${featuredClass}">
+      return \`
+        <div class="product-card \${featuredClass}">
           <div class="product-content">
-            <div>
-              <h3 class="product-name">${product.fullName}</h3>
-              <p class="product-slogan">${product.slogan}</p>
-              
-              <a href="${product.buyLink}" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="btn-primary">
-                🛒 PEDIR T3 SMART TON PRÓ AGORA
-              </a>
-              
-              <ul class="features-list">
-                ${product.features.map(feature => `<li>${feature}</li>`).join('')}
-              </ul>
+            <div class="left-column">
+              <div class="product-info">
+                <h3 class="product-name">\${product.fullName}</h3>
+                <p class="product-slogan">\${product.slogan}</p>
+                
+                <a href="\${product.buyLink}" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-primary">
+                  🛒 PEDIR T3 SMART TON PRÓ AGORA
+                </a>
+                
+                <ul class="features-list">
+                  \${product.features.map(feature => \`<li>\${feature}</li>\`).join('')}
+                </ul>
 
-              <div class="highlight-feature">
-                <strong>${product.highlight.title}</strong>
-                <span>${product.highlight.description}</span>
+                <div class="highlight-feature">
+                  <strong>\${product.highlight.title}</strong>
+                  <span>\${product.highlight.description}</span>
+                </div>
               </div>
             </div>
             
             <div class="product-image-wrapper">
-              <span class="product-badge">${product.badge}</span>
-              <img src="${imageSrc}" alt="${product.fullName}" class="product-image" loading="lazy">
+              <span class="product-badge">\${product.badge}</span>
+              <img src="\${imageSrc}" alt="\${product.fullName}" class="product-image" loading="lazy">
             </div>
           </div>
         </div>
-      `;
+      \`;
     }
     
-    // LAYOUT NORMAL PARA OUTRAS MAQUININHAS
-    // BOTÃO LOGO APÓS O SLOGAN
-    return `
+    return \`
       <div class="product-card">
         <div class="product-image-wrapper">
-          <span class="product-badge">${product.badge}</span>
-          <img src="${imageSrc}" alt="${product.fullName}" class="product-image" loading="lazy">
+          <span class="product-badge">\${product.badge}</span>
+          <img src="\${imageSrc}" alt="\${product.fullName}" class="product-image" loading="lazy">
         </div>
         <div class="product-content">
-          <h3 class="product-name">${product.fullName}</h3>
-          <p class="product-slogan">${product.slogan}</p>
-          
-          <a href="${product.buyLink}" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn-primary">
-            🛒 PEDIR ${product.name.toUpperCase()}
-          </a>
+          <h3 class="product-name">\${product.fullName}</h3>
+          <p class="product-slogan">\${product.slogan}</p>
           
           <ul class="features-list">
-            ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+            \${product.features.map(feature => \`<li>\${feature}</li>\`).join('')}
           </ul>
 
           <div class="highlight-feature">
-            <strong>${product.highlight.title}</strong>
-            <span>${product.highlight.description}</span>
+            <strong>\${product.highlight.title}</strong>
+            <span>\${product.highlight.description}</span>
           </div>
+
+          <a href="\${product.buyLink}" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-primary">
+            🛒 Pedir \${product.name}
+          </a>
         </div>
       </div>
-    `;
+    \`;
   }).join('');
 
-  PRODUCTS_CONTAINER.innerHTML = html;
+  // Preservar o banner MEI/PJ e adicionar os produtos
+  PRODUCTS_CONTAINER.innerHTML = meiBanner.outerHTML + html;
 }
 
 /**
@@ -221,37 +236,36 @@ function renderComparisonTable(products) {
     return;
   }
 
-  const tbody = products.map(product => `
+  const tbody = products.map(product => \`
     <tr>
-      <td><strong>${product.fullName}</strong></td>
-      <td>${product.connectivity}</td>
-      <td>${product.nfc}</td>
-      <td>${product.receipt}</td>
-      <td>${product.highlight.title}</td>
+      <td><strong>\${product.fullName}</strong></td>
+      <td>\${product.connectivity}</td>
+      <td>\${product.nfc}</td>
+      <td>\${product.receipt}</td>
+      <td>\${product.highlight.title}</td>
     </tr>
-  `).join('');
+  \`).join('');
 
   const thead = COMPARISON_TABLE.querySelector('thead');
   
-  COMPARISON_TABLE.innerHTML = `
-    ${thead.outerHTML}
-    <tbody>${tbody}</tbody>
-  `;
+  COMPARISON_TABLE.innerHTML = \`
+    \${thead.outerHTML}
+    <tbody>\${tbody}</tbody>
+  \`;
 }
 
 /**
  * Inicialização quando o DOM estiver pronto
  */
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('✅ TonVendas inicializado - Dados sincronizados com Ton oficial');
-  console.log('🎨 LAYOUT ATUALIZADO: Botões após os nomes das maquininhas');
-  console.log('📦 Container Premium REDUZIDO');
+  console.log('✅ TON OFERTA RELÂMPAGO inicializado - Dados sincronizados com Ton oficial');
+  console.log('✅ CORREÇÃO APLICADA: Container Ton Max MEI/PJ agora aparece');
+  console.log('✅ CORREÇÃO APLICADA: T3 Smart TON SUPER é o primeiro após o Premium');
   
   setTimeout(() => {
     renderProducts(PRODUCTS_DATA);
     renderComparisonTable(PRODUCTS_DATA);
     console.log('✅ Produtos carregados com sucesso!');
-    console.log('⭐ T3 Smart TON PRÓ em destaque!');
-    console.log('🆕 T3 Smart TON SUPER adicionado!');
+    console.log('📋 Ordem: 1) Ton Max MEI/PJ, 2) T3 Smart TON PRÓ (Premium), 3) T3 Smart TON SUPER, 4) T3, 5) T2');
   }, 500);
 });
