@@ -148,7 +148,7 @@ const APP_DATA = {
         "Aceita Pix na Maquininha",
         "Comprovante por SMS ou impresso"
       ],
-      "sellerLink": "https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_SMART_POS_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor"
+      "sellerLink": "https://ton.com.br/checkout/cart/?productId=TONSUPER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonsuper&utm_medium=invite_share&utm_source=revendedor"
     }
   ],
   plansComparison: [
