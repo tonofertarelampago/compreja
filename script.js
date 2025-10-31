@@ -1,257 +1,509 @@
-/**
- * TonVendas - Frontend JavaScript Atualizado
- * LAYOUT REORGANIZADO: Botões após os nomes das maquininhas
- */
-
-const PRODUCTS_CONTAINER = document.getElementById('products-container');
-const COMPARISON_TABLE = document.getElementById('comparison-table');
-
-// Imagens oficiais dos produtos
-const PRODUCT_IMAGES = {
-  'T2': 'https://sites-cms-deco-prd.s3.us-east-1.amazonaws.com/optimized/ton/8974cebf-7526-48d4-a1ad-008e17a4aee4/maquininha-t2-right.webp',
-  'T3': 'https://sites-cms-deco-prd.s3.us-east-1.amazonaws.com/optimized/ton/4dcf89f3-d51d-49d4-a82f-20fc91abf48a/maquininha-t3-right.webp',
-  'T3 Smart TON PRÓ': 'https://sites-cms-deco-prd.s3.us-east-1.amazonaws.com/optimized/ton/d109918b-0c7e-4bf0-b016-e2202146e6de/maquininha-t3-smart-right.webp',
-  'T3 Smart TON SUPER': 'https://sites-cms-deco-prd.s3.us-east-1.amazonaws.com/optimized/ton/d109918b-0c7e-4bf0-b016-e2202146e6de/maquininha-t3-smart-right.webp'
+// ===== DADOS ESTÁTICOS COM IMAGENS DAS MAQUININHAS =====
+const APP_DATA = {
+  lastFetched: "2025-10-28T14:00:00.000Z",
+  contacts: {
+    phones: [
+      "31 98498-7116",
+      "3004-9137"
+    ],
+    whatsappLink: "https://api.whatsapp.com/send?phone=5531984987116&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20ofertas%20rel%C3%A2mpago%20da%20Ton!"
+  },
+  benefits: [
+    {
+      icon: "🚚",
+      title: "Troca grátis e garantia vitalícia",
+      description: "Trocamos a sua maquininha sem você precisar sair de casa",
+      color: "#007AFF"
+    },
+    {
+      icon: "📱",
+      title: "Venda pelo App com TapTon, Link e Pix",
+      description: "Esqueceu a maquininha em casa? Venda em qualquer lugar usando seu celular",
+      color: "#5856D6"
+    },
+    {
+      icon: "⚡",
+      title: "Receba no mesmo dia",
+      description: "Escolha no app como prefere receber as suas vendas",
+      color: "#FF9500"
+    },
+    {
+      icon: "💰",
+      title: "Tempo é dinheiro",
+      description: "Menos tempo perdido com burocracia, mais tempo vendendo. Com o Ton, você recebe com taxa baixa e sem complicação",
+      color: "#FFC107"
+    },
+    {
+      icon: "📊",
+      title: "Gestão fácil do MEI",
+      description: "Gere e pague seu DAS, acompanhe benefícios e cuide do MEI sem custos. Tudo no app onde você vende e recebe",
+      color: "#4CAF50"
+    },
+    {
+      icon: "📶",
+      title: "Chip com internet ilimitada e grátis",
+      description: "Sem nenhum custo mensal adicional no seu bolso",
+      color: "#00BCD4"
+    },
+    {
+      icon: "👤",
+      title: "Não precisa ter CNPJ",
+      description: "Ainda não tem uma empresa? O Ton é pra todos: PF, PJ ou MEI",
+      color: "#9C27B0"
+    },
+    {
+      icon: "💚",
+      title: "Aqui sua Maquininha não tem aluguel",
+      description: "Com o Ton você tem máquina de qualidade sem pesar no bolso",
+      color: "#00C853"
+    },
+    {
+      icon: "💳",
+      title: "Aceite as principais formas de pagamento",
+      description: "Aceita Mastercard, Visa, Elo, American Express, Apple Pay, Google Pay, Samsung Pay, Pix e muito mais",
+      color: "#FF3B30"
+    }
+  ],
+  products: [
+    {
+      "id": "ton-max-mei",
+      "title": "Ton Max – Para MEI e PJ",
+      "slogan": "A máquina ideal para quem tem CNPJ. Taxas bem baixas!",
+      "image": "https://sspark.genspark.ai/cfimages?u1=iCjj%2Bk0gu1I0snI6NFwuVI9bWTCaoNdlvBcFSVAb7qGMpTvWQEkV19h7Sw2oAo4GNayOdLw79PBkPtTumK5%2F1%2FdbRmsWGR%2FpaYtA6O%2B1CKPbXoLc8jCEI4PJ%2FthHeNGTAkASymvn&u2=Oh28sj5ixTJWd5P%2F&width=2560",
+      "benefits": [
+        "Taxas exclusivas para MEI/PJ",
+        "Sem aluguel, a máquina é sua",
+        "Vendeu recebeu no mesmo dia",
+        "Gerencie seu Mei e pague seu DAS sem custo",
+        "Melhor custo-benefício"
+      ],
+      "sellerLink": "https://ton.com.br/checkout/cart/?productId=TONMAXMEI_TIER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonmaxmei_tier&utm_medium=invite_share&utm_source=revendedor"
+    },
+    {
+      "id": "t3-smart-ton-pro",
+      "title": "T3 Smart Ton Pró",
+      "slogan": "A mais completa! Receba em 1 dia e venda em qualquer lugar.",
+      "image": "https://sspark.genspark.ai/cfimages?u1=kf5OL78Yx%2BF%2FdzChTmf6DAdovgqDrEzSKscBgrM7iuyPXCcE23bhCw%2FNeNwvFejK8zL6d6hOyp6NQQv18%2B456vVjwRCl4QpeM5i451tT6%2F3%2BMJb1HZ7PnmdkJhOZzF2oFNHvLsLlRXwr2EddUhVW08jQx4c%2Fjh8ExsAmt3U9L%2FTMavXq4TBEzWvSsFU77ejCoQ%3D%3D&u2=YiCtHQmm3U0jHTSO&width=2560",
+      "benefits": [
+        "Recebimento, no mesmo dia ou em 1 dia útil",
+        "Melhores taxas para pessoa física",
+        "Bateria de longa Duração",
+        "Bobina Gratis, Chip 4G Gratis",
+        "Tela Touch com sistema Android",
+        "Conexão WI-FI",
+        "Receba por Aproximação",
+        "Aceita Pix na Maquininha",
+        "Comprovante por SMS ou impresso"
+      ],
+      "sellerLink": "https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_SMART_POS_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor"
+    },
+    {
+      "id": "t3-ton-pro",
+      "title": "T3 Ton Pró",
+      "slogan": "O plano mais completo e robusto para o seu negócio.",
+      "image": "https://sspark.genspark.ai/cfimages?u1=m4fpN1Zl8ygLX6elioWmcDigRmi%2B2TcmiQ1tCKgk7jt7xm8i1OnvbejXF83%2BzwaX7cGYUBhI1RHoDz8d7V73%2F0g8OlLLVqaBraT4BadZQPlIeupcqejQ8FbYbYfxxLRv0fhwsSxblUaFhhsmQjjzSsb8Jg9ySFRNn9UrHettSF04n154jWkNkU8t%2BTNYyZuR&u2=LNHjOL2H%2FhaI8RtH&width=2560",
+      "benefits": [
+        "Taxas competitivas",
+        "Sem aluguel",
+        "Chip 3G Gratis",
+        "Conexão WI-FI",
+        "Bobina Gratis",
+        "Receba por aproximação",
+        "Receba por Pix",
+        "Suporte 24h"
+      ],
+      "sellerLink": "https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_S920_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor"
+    },
+    {
+      "id": "t2-ton-pro",
+      "title": "T2 Ton Pró",
+      "slogan": "A máquina ideal para quem busca praticidade e economia.",
+      "image": "https://sspark.genspark.ai/cfimages?u1=biCgiT8ooZ53mJZFwtfVEPfkSCKekKQn%2BDQHIjSmiRQBkl8ijiZDbMgWGhNtEkGN1jfhQrKcVfOv%2Fh948PPNvPqSEwBCBlctBrV7p55%2F9beOOwRr9MIe5wKlhcklCdJs9pMa799%2BMOem26QO2y2fLLULsrA6F%2BzWINaCbsNkhl4UnLDJiKMT6ix6GXvqDYHeLP1%2B3hKR&u2=RRXVt9tLC%2FOBVK9q&width=2560",
+      "benefits": [
+        "Simples e prática",
+        "Chip 3G Gratis",
+        "Conexão WI-FI",
+        "Receba por Aproximação",
+        "Receba por Pix",
+        "Taxas reduzidas",
+        "Bateria de longa duração"
+      ],
+      "sellerLink": "https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_D195_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor"
+    },
+    {
+      "id": "t3-smart-ton-super",
+      "title": "T3 Smart Ton Super",
+      "slogan": "Para quem está começando e precisa de uma máquina inteligente.",
+      "image": "https://sspark.genspark.ai/cfimages?u1=kf5OL78Yx%2BF%2FdzChTmf6DAdovgqDrEzSKscBgrM7iuyPXCcE23bhCw%2FNeNwvFejK8zL6d6hOyp6NQQv18%2B456vVjwRCl4QpeM5i451tT6%2F3%2BMJb1HZ7PnmdkJhOZzF2oFNHvLsLlRXwr2EddUhVW08jQx4c%2Fjh8ExsAmt3U9L%2FTMavXq4TBEzWvSsFU77ejCoQ%3D%3D&u2=YiCtHQmm3U0jHTSO&width=2560",
+      "benefits": [
+        "Ideal para iniciantes",
+        "Aceita Pix e QR Code",
+        "Recebimento, no mesmo dia ou em 1 dia útil",
+        "Melhores taxas para pessoa física",
+        "Bateria de longa Duração",
+        "Bobina Gratis, Chip 4G Gratis",
+        "Tela Touch com sistema Android",
+        "Conexão WI-FI",
+        "Receba por Aproximação",
+        "Aceita Pix na Maquininha",
+        "Comprovante por SMS ou impresso"
+      ],
+      "sellerLink": "https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_SMART_POS_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor"
+    }
+  ],
+  plansComparison: [
+    {
+      name: "Super",
+      profile: "Ideal pra quem está começando",
+      strengths: "Fácil entrada, sem exigências • Taxas um pouco mais altas • Recebimento mais demorado • Autônomos iniciantes e ambulantes (~R$ 2.000/mês)"
+    },
+    {
+      name: "Pro",
+      profile: "Vendas constantes",
+      strengths: "Recebe rápido, taxas boas • Sem Aluguel • Negócios de vendas constantes (R$ 2.000–10.000/mês)"
+    },
+    {
+      name: "Max MEI",
+      profile: "CNPJ ativo",
+      strengths: "Economia e profissionalismo • Taxas Bem Baixas • Melhor Custo e Beneficio • MEIs e pequenos negócios"
+    },
+    {
+      name: "Ultra",
+      profile: "Negócios fixos",
+      strengths: "Ideal pra parcelado • Profissional • Deliverys, lojas, serviços fixos"
+    },
+    {
+      name: "Mega",
+      profile: "Grandes empresas",
+      strengths: "Menores taxas • Para Grandes Negocios • Empresas e redes com alto faturamento"
+    }
+  ],
+  faq: [
+    {
+      question: "Preciso pagar aluguel?",
+      answer: "Não! Todas as maquininhas da Ton são **sem aluguel**. Comprou, é sua."
+    },
+    {
+      question: "Posso vender sem CNPJ?",
+      answer: "Sim, pode usar com CPF. Mas se tiver MEI, as taxas são ainda menores."
+    },
+    {
+      question: "Quando recebo o dinheiro?",
+      answer: "Depende do plano: mesmo dia, 1, 14 ou 30 dias."
+    },
+    {
+      question: "Tem garantia?",
+      answer: "Sim, garantia vitalícia com troca em caso de defeito."
+    },
+    {
+      question: "Aceita PIX e vale-alimentação?",
+      answer: "Sim! PIX, débito, crédito à vista e parcelado, vale-refeição e alimentação (modelo dependente)."
+    }
+  ],
+  // NOVA SEÇÃO: BOTÕES DE DICAS COM LINKS EXTERNOS
+  tipsButtons: [
+    {
+      icon: "📰",
+      title: "TOP 10 artigos sobre vendas que você precisa conhecer",
+      url: "https://www.agendor.com.br/blog/artigos-sobre-vendas/"
+    },
+    {
+      icon: "🚀",
+      title: "10 técnicas de vendas infalíveis",
+      url: "https://meusucesso.com/artigos/10-tecnicas-de-vendas-infaliveis-23/"
+    },
+    {
+      icon: "🤝",
+      title: "7 técnicas de abordagem para não ser invasivo com seu cliente!",
+      url: "https://www.zendesk.com.br/blog/tecnicas-de-abordagem/"
+    },
+    {
+      icon: "💼",
+      title: "8 blogs brasileiros que todo empreendedor deveria ler",
+      url: "https://sebrae.com.br/sites/PortalSebrae/artigos/8-blogs-brasileiros-que-todo-empreendedor-deveria-ler,6307baede1306510VgnVCM1000004c00210aRCRD"
+    },
+    {
+      icon: "💳",
+      title: "5 vantagens que a maquininha de cartão oferece para sua loja",
+      url: "https://empreendedores.mercadopago.com.br/vantagens-de-adquirir-uma-maquininha-de-cartao-para-sua-loja"
+    },
+    {
+      icon: "🎯",
+      title: "Conheça as 8 principais técnicas de vendas",
+      url: "https://sebrae.com.br/sites/PortalSebrae/artigos/conheca-as-8-principais-tecnicas-de-vendas,a4f0bbd7f0f07810VgnVCM1000001b00320aRCRD"
+    },
+    {
+      icon: "👥",
+      title: "Abordagem ao cliente: um momento crucial para a venda",
+      url: "https://sebrae.com.br/sites/PortalSebrae/artigos/abordagem-ao-cliente-um-momento-crucial-para-a-venda,5492219a524c4810VgnVCM100000d701210aRCRD"
+    },
+    {
+      icon: "📈",
+      title: "Máquinas de cartão potencializam as vendas em até 30%",
+      url: "https://sebrae.com.br/sites/PortalSebrae/ufs/ac/artigos/maquinas-de-cartao-potencializam-as-vendas-em-ate-30,6869237d61dbc710VgnVCM100000d701210aRCRD"
+    },
+    {
+      icon: "✅",
+      title: "Maquininha de cartão: vantagens e como usar no seu negócio",
+      url: "https://nox.com.br/maquininha-de-cartao-vantagens/"
+    },
+    {
+      icon: "🌟",
+      title: "Conheça os benefícios da maquininha de cartão",
+      url: "https://www.concil.com.br/blog/conheca-os-beneficios-da-maquininha-de-cartao/"
+    },
+    {
+      icon: "💚",
+      title: "Maquininha Ton Vale a Pena? 7 Vantagens em 2025",
+      url: "https://buscamaquininha.com.br/maquininha-ton-e-boa/"
+    },
+    {
+      icon: "📝",
+      title: "Pra vender (Blog oficial Ton sobre vendas)",
+      url: "https://blog.ton.com.br/categoria/para-vender/"
+    },
+    {
+      icon: "💰",
+      title: "Maquininha Ton: veja as taxas, vantagens e modelos ...",
+      url: "https://www.idinheiro.com.br/negocios/maquininha-ton/"
+    },
+    {
+      icon: "⚖️",
+      title: "8 Vantagens e Desvantagens da Maquininha T3 Ton",
+      url: "https://maquininha.cc/vantagens-desvantagens-t3-ton/"
+    },
+    {
+      icon: "🎓",
+      title: "Dicas de como vender Maquininha Ton: tenha uma renda ...",
+      url: "https://www.maquininha.com.br/como-vender-maquininha-ton/"
+    },
+    {
+      icon: "📚",
+      title: "Blog do Ton",
+      url: "https://blog.ton.com.br"
+    },
+    {
+      icon: "🔍",
+      title: "A Maquininha Ton é boa? Confira!",
+      url: "https://www.mobills.com.br/blog/maquininha-de-cartao/maquininha-ton/"
+    },
+    {
+      icon: "✍️",
+      title: "7 Copies Poderosas para Anunciar a Maquininha Ton e ...",
+      url: "https://maquininhas.blog/7-copies-poderosas-para-anunciar-a-maquininha-ton-e-impulsionar-suas-vendas/"
+    }
+  ],
+  articles: [
+    {
+      id: 3,
+      title: "Qual Maquininha Ton é Ideal para o seu MEI em 2025?",
+      content: "Para quem é Microempreendedor Individual (MEI), a escolha da maquininha certa faz toda a diferença. A **Ton Max MEI** é a solução perfeita, pois oferece taxas exclusivas e muito mais baixas para quem possui CNPJ ativo. Não perca tempo com burocracia e garanta o melhor custo-benefício para o seu negócio. Com a Ton, você tem a certeza de **taxas competitivas** e **sem aluguel**, permitindo que você foque no que realmente importa: as suas vendas. Além disso, o **recebimento rápido** garante o fluxo de caixa necessário para o crescimento.",
+      date: "2025-10-28"
+    },
+    {
+      id: 2,
+      title: "Ton ou SumUp: Onde Encontrar as Menores Taxas?",
+      content: "A batalha das maquininhas é acirrada, mas quando o assunto é taxa, a Ton se destaca. Enquanto a SumUp pode ter taxas competitivas em alguns cenários, a Ton oferece planos como o **Ton Pro** e **Ton Mega** que garantem as menores taxas do mercado, especialmente para quem tem um volume de vendas constante. Lembre-se: com a Ton, a máquina é **sem aluguel** e o **recebimento rápido** é uma realidade. Compare e comprove por que a Ton é a escolha inteligente para maximizar o seu lucro.",
+      date: "2025-10-27"
+    },
+    {
+      id: 1,
+      title: "Como Vender com Cartão Mesmo Sem Ter CNPJ?",
+      content: "Muitos vendedores autônomos e iniciantes pensam que é preciso ter CNPJ para aceitar cartão, mas isso não é verdade! A Ton permite que você use a maquininha com o seu CPF. Basta escolher um dos planos (como o **Ton Super** ou **Ton Pro**) e começar a vender. Embora as taxas para MEI sejam menores, vender com CPF ainda é uma excelente forma de profissionalizar o seu negócio. Aproveite as vantagens de ter uma máquina **sem aluguel** e com **recebimento rápido** para não perder nenhuma venda.",
+      date: "2025-10-26"
+    }
+  ]
 };
 
-// Dados corretos das maquininhas
-const PRODUCTS_DATA = [
-  {
-    id: 'T3-Smart-Pro',
-    name: 'T3 Smart TON PRÓ',
-    fullName: 'Maquininha T3 Smart TON PRÓ',
-    badge: 'PREMIUM',
-    slogan: 'A maquininha Android, mais rápida e com melhor bateria',
-    connectivity: 'Chip 4G e Wi-Fi',
-    nfc: 'Sim',
-    receipt: 'Impresso ou SMS',
-    featured: true,
-    features: [
-      'Frete e troca grátis para todo o Brasil',
-      'Com Chip 4G e Wi-Fi',
-      'Receba por aproximação (NFC)',
-      'Comprovante impresso ou SMS',
-      'Venda pelo App com TapTon, Link e Pix',
-      'Aceite Pix na Maquininha',
-      'Bateria de longa duração',
-      'Sistema Android com Visor Touchscreen',
-      'Chip com internet 4G ilimitada e grátis',
-      'Garantia ilimitada'
-    ],
-    highlight: {
-      title: '🚀 Tecnologia Android avançada',
-      description: 'Tela touchscreen colorida, bateria de longa duração e conexão 4G'
-    },
-    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_SMART_POS_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
-  },
-  {
-    id: 'T3-Smart-Super',
-    name: 'T3 Smart TON SUPER',
-    fullName: 'Maquininha T3 Smart TON SUPER',
-    badge: 'SUPER',
-    slogan: 'Por dentro da T3 Smart',
-    connectivity: 'Chip 4G e Wi-Fi',
-    nfc: 'Sim',
-    receipt: 'Impresso ou SMS',
-    featured: false,
-    features: [
-      'Bateria de longa duração - Pra não ficar sem bateria na hora de vender',
-      'Rápida e inteligente - Com sistema operacional Android',
-      'Chip 4G grátis - Sem nenhum custo adicional',
-      'Conexão Wi-Fi - Pra você nunca ficar desconectado',
-      'Bobina grátis - Imprima ou envie por sms o comprovante da venda',
-      'Receba por aproximação (NFC) - Venda mais rápido e diminua as filas',
-      'Receba por Pix - Pix QR Code ou Pix por aproximação',
-      'Tela touch - Interface ágil e precisa para operações rápidas'
-    ],
-    highlight: {
-      title: '⚡ Sistema Android com Tela Touch',
-      description: 'Interface ágil e precisa para operações rápidas'
-    },
-    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONSUPER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonsuper&utm_medium=invite_share&utm_source=revendedor'
-  }, 
-  {
-    id: 'T3',
-    name: 'T3',
-    fullName: 'Maquininha T3',
-    badge: 'POPULAR',
-    slogan: 'A maquininha parceira do empreendedor brasileiro',
-    connectivity: 'Chip 3G e Wi-Fi',
-    nfc: 'Sim',
-    receipt: 'Impresso ou SMS',
-    featured: false,
-    features: [
-      'Frete e troca grátis para todo o Brasil',
-      'Com Chip 3G e Wi-Fi',
-      'Receba por aproximação (NFC)',
-      'Comprovante impresso ou SMS',
-      'Venda pelo App com TapTon, Link e Pix',
-      'Aceite Pix na Maquininha',
-      'Chip com internet ilimitada e grátis',
-      'Garantia ilimitada'
-    ],
-    highlight: {
-      title: '🖨️ Com impressora integrada',
-      description: 'Emita comprovantes impressos para seus clientes'
-    },
-    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_S920_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
-  },
-  {
-    id: 'T2',
-    name: 'T2',
-    fullName: 'Maquininha T2',
-    badge: 'COMPACTA',
-    slogan: 'A maquininha compacta que tá sempre com você',
-    connectivity: 'Chip 3G e Wi-Fi',
-    nfc: 'Sim',
-    receipt: 'SMS apenas',
-    featured: false,
-    features: [
-      'Frete e troca grátis para todo o Brasil',
-      'Com Chip 3G e Wi-Fi',
-      'Receba por aproximação (NFC)',
-      'Comprovante por SMS',
-      'Venda pelo App com TapTon, Link e Pix',
-      'Aceite Pix na Maquininha',
-      'Chip com internet ilimitada e grátis',
-      'Garantia ilimitada'
-    ],
-    highlight: {
-      title: '📱 Ideal para vendas móveis',
-      description: 'Perfeita para quem está sempre em movimento'
-    },
-    buyLink: 'https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_D195_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor'
-  },
-];
-
-/**
- * Renderiza os cards das maquininhas
- * LAYOUT ATUALIZADO: Botão logo após o nome da maquininha
- */
-function renderProducts(products) {
-  if (!products || products.length === 0) {
-    PRODUCTS_CONTAINER.innerHTML = `
-      <div style="text-align:center;color:#666;padding:40px;grid-column:1/-1;">
-        <p>Nenhum produto disponível no momento.</p>
-      </div>
-    `;
-    return;
-  }
-
-  const html = products.map(product => {
-    const imageSrc = PRODUCT_IMAGES[product.name] || PRODUCT_IMAGES['T3 Smart TON PRÓ'];
-    const featuredClass = product.featured ? 'featured' : '';
-    
-    if (product.featured) {
-      // LAYOUT ESPECIAL PARA T3 SMART TON PRÓ
-      // BOTÃO LOGO APÓS O SLOGAN
-      return `
-        <div class="product-card ${featuredClass}">
-          <div class="product-content">
-            <div>
-              <h3 class="product-name">${product.fullName}</h3>
-              <p class="product-slogan">${product.slogan}</p>
-              
-              <a href="${product.buyLink}" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="btn-primary">
-                🛒 PEDIR T3 SMART TON PRÓ AGORA
-              </a>
-              
-              <ul class="features-list">
-                ${product.features.map(feature => `<li>${feature}</li>`).join('')}
-              </ul>
-
-              <div class="highlight-feature">
-                <strong>${product.highlight.title}</strong>
-                <span>${product.highlight.description}</span>
-              </div>
-            </div>
-            
-            <div class="product-image-wrapper">
-              <span class="product-badge">${product.badge}</span>
-              <img src="${imageSrc}" alt="${product.fullName}" class="product-image" loading="lazy">
-            </div>
-          </div>
-        </div>
-      `;
-    }
-    
-    // LAYOUT NORMAL PARA OUTRAS MAQUININHAS
-    // BOTÃO LOGO APÓS O SLOGAN
-    return `
-      <div class="product-card">
-        <div class="product-image-wrapper">
-          <span class="product-badge">${product.badge}</span>
-          <img src="${imageSrc}" alt="${product.fullName}" class="product-image" loading="lazy">
-        </div>
-        <div class="product-content">
-          <h3 class="product-name">${product.fullName}</h3>
-          <p class="product-slogan">${product.slogan}</p>
-          
-          <a href="${product.buyLink}" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn-primary">
-            🛒 PEDIR ${product.name.toUpperCase()}
-          </a>
-          
-          <ul class="features-list">
-            ${product.features.map(feature => `<li>${feature}</li>`).join('')}
-          </ul>
-
-          <div class="highlight-feature">
-            <strong>${product.highlight.title}</strong>
-            <span>${product.highlight.description}</span>
-          </div>
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  PRODUCTS_CONTAINER.innerHTML = html;
-}
-
-/**
- * Renderiza a tabela de comparação
- */
-function renderComparisonTable(products) {
-  if (!products || products.length === 0) {
-    return;
-  }
-
-  const tbody = products.map(product => `
-    <tr>
-      <td><strong>${product.fullName}</strong></td>
-      <td>${product.connectivity}</td>
-      <td>${product.nfc}</td>
-      <td>${product.receipt}</td>
-      <td>${product.highlight.title}</td>
-    </tr>
-  `).join('');
-
-  const thead = COMPARISON_TABLE.querySelector('thead');
-  
-  COMPARISON_TABLE.innerHTML = `
-    ${thead.outerHTML}
-    <tbody>${tbody}</tbody>
-  `;
-}
-
-/**
- * Inicialização quando o DOM estiver pronto
- */
+// ===== INICIALIZAÇÃO =====
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('✅ TonVendas inicializado - Dados sincronizados com Ton oficial');
-  console.log('🎨 LAYOUT ATUALIZADO: Botões após os nomes das maquininhas');
-  console.log('📦 Container Premium REDUZIDO');
-  
-  setTimeout(() => {
-    renderProducts(PRODUCTS_DATA);
-    renderComparisonTable(PRODUCTS_DATA);
-    console.log('✅ Produtos carregados com sucesso!');
-    console.log('⭐ T3 Smart TON PRÓ em destaque!');
-    console.log('🆕 T3 Smart TON SUPER adicionado!');
-  }, 500);
+  renderAllSections();
+  setupEventListeners();
 });
+
+// ===== RENDERIZAR TODAS AS SEÇÕES =====
+function renderAllSections() {
+  renderBenefits(); // NOVA FUNÇÃO PARA OS 9 CARDS
+  renderProducts();
+  renderComparison();
+  renderFAQ();
+  renderTipsButtons(); // NOVA FUNÇÃO PARA OS BOTÕES DE DICAS
+  renderArticles();
+  
+  // Mostrar o site após o carregamento dos dados
+  document.body.style.opacity = 1;
+}
+
+// ===== RENDERIZAR BENEFÍCIOS (9 CARDS) =====
+function renderBenefits() {
+  const container = document.getElementById('benefits-container');
+  if (!APP_DATA || !APP_DATA.benefits) return;
+
+  container.innerHTML = APP_DATA.benefits.map(benefit => `
+    <div class="benefit-card">
+      <div class="benefit-icon" style="color: ${benefit.color};">${benefit.icon}</div>
+      <h3 class="benefit-title">${benefit.title}</h3>
+      <p class="benefit-description">${benefit.description}</p>
+    </div>
+  `).join('');
+}
+
+// ===== RENDERIZAR PRODUTOS =====
+function renderProducts() {
+  const container = document.getElementById('products-container');
+  if (!APP_DATA || !APP_DATA.products) return;
+
+  container.innerHTML = APP_DATA.products.map((product, index) => `
+    <div class="product-card">
+      <div class="product-image-wrapper">
+        <img src="${product.image}" 
+             alt="${product.title}" 
+             class="product-image"
+             loading="lazy"
+             onerror="this.src='https://via.placeholder.com/300x300/00C853/FFFFFF?text=Ton+${product.title.replace(/\s/g, '+')}'">
+        ${index === 0 ? '<span class="product-badge">⭐ MAIS VENDIDA</span>' : ''}
+      </div>
+      <div class="product-content">
+        <h3 class="product-name">${product.title}</h3>
+        <p class="product-slogan">${product.slogan}</p>
+        <ul class="features-list">
+          ${product.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+        </ul>
+        <a href="${product.sellerLink}" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-primary">
+          🚀 Quero este modelo
+        </a>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== RENDERIZAR COMPARAÇÃO DE PLANOS =====
+function renderComparison() {
+  const container = document.getElementById('comparison-container');
+  if (!APP_DATA || !APP_DATA.plansComparison) return;
+
+  container.innerHTML = APP_DATA.plansComparison.map(plan => `
+    <div class="comparison-card">
+      <h3>${plan.name}</h3>
+      <p><strong>Perfil:</strong> ${plan.profile}</p>
+      <p>${plan.strengths}</p>
+    </div>
+  `).join('');
+}
+
+// ===== RENDERIZAR FAQ =====
+function renderFAQ() {
+  const container = document.getElementById('faq-container');
+  if (!APP_DATA || !APP_DATA.faq) return;
+
+  container.innerHTML = APP_DATA.faq.map((item, index) => `
+    <div class="faq-item" data-index="${index}">
+      <div class="faq-question" onclick="toggleFAQ(${index})">
+        <span>${item.question}</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        <p>${item.answer.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== NOVA FUNÇÃO: RENDERIZAR BOTÕES DE DICAS =====
+function renderTipsButtons() {
+  const container = document.getElementById('tips-buttons-container');
+  if (!APP_DATA || !APP_DATA.tipsButtons) return;
+
+  container.innerHTML = APP_DATA.tipsButtons.map(tip => `
+    <a href="${tip.url}" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="tip-button">
+      <span class="tip-button-icon">${tip.icon}</span>
+      <span class="tip-button-text">${tip.title}</span>
+      <span class="tip-button-arrow">→</span>
+    </a>
+  `).join('');
+}
+
+// ===== RENDERIZAR ARTIGOS =====
+function renderArticles() {
+  const container = document.getElementById('articles-container');
+  if (!APP_DATA || !APP_DATA.articles || APP_DATA.articles.length === 0) {
+    container.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
+        <p style="color: var(--text-muted); font-size: 16px;">
+          Nenhum artigo disponível no momento.
+        </p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = APP_DATA.articles.map(article => `
+    <div class="article-card">
+      <div class="article-header">
+        <div class="article-date">📅 ${new Date(article.date).toLocaleDateString('pt-BR')}</div>
+        <h3 class="article-title">${article.title}</h3>
+      </div>
+      <div class="article-content">
+        ${article.content.substring(0, 150)}...
+      </div>
+      <div class="article-cta">
+        <a href="#">Ler mais →</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== TOGGLE FAQ =====
+function toggleFAQ(index) {
+  const items = document.querySelectorAll('.faq-item');
+  const item = items[index];
+  
+  // Fechar todos os outros
+  items.forEach((el, i) => {
+    if (i !== index) {
+      el.classList.remove('active');
+    }
+  });
+  
+  // Toggle o atual
+  item.classList.toggle('active');
+}
+
+// ===== MOSTRAR SEÇÃO =====
+function showSection(sectionId) {
+  // Ocultar todas as seções
+  document.getElementById('home').style.display = 'none';
+  document.getElementById('articles').style.display = 'none';
+  document.getElementById('faq').style.display = 'none';
+
+  // Mostrar a seção selecionada
+  if (sectionId === 'home') {
+    document.getElementById('home').style.display = 'block';
+  } else if (sectionId === 'articles') {
+    document.getElementById('articles').style.display = 'block';
+  } else if (sectionId === 'faq') {
+    document.getElementById('faq').style.display = 'block';
+  }
+
+  // Atualizar nav ativa
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('onclick').includes(sectionId)) {
+      link.classList.add('active');
+    }
+  });
+
+  // Scroll para o topo
+  window.scrollTo(0, 0);
+}
+
+// ===== SETUP EVENT LISTENERS =====
+function setupEventListeners() {
+  // Event listeners adicionais podem ser adicionados aqui
+}
