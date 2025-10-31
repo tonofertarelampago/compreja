@@ -1,218 +1,156 @@
-# 🚀 TonVendas - Site de Vendas de Maquininhas Ton (ATUALIZADO)
+# 🎯 Códigos Atualizados - Ton Oferta Relâmpago
 
-Site de vendas de maquininhas Ton com dados sincronizados automaticamente com o site oficial da Ton.
+## ✅ Alterações Realizadas
 
----
+### 📋 Resumo das Correções
 
-## 🎨 **ALTERAÇÕES REALIZADAS**
-
-### ✅ **1. T3 Smart TON PRÓ - Mudanças de Design**
-- **Fundo do container:** Alterado de VERDE para **BRANCO**
-- **Texto:** Alterado de BRANCO para **PRETO**
-- **Nome:** Atualizado de "T3 Smart" para **"T3 Smart TON PRÓ"**
-- **Botão:** Alterado de DOURADO para **VERDE** (mantendo identidade Ton)
-- **Destaque:** Mantém badge "⭐ MAIS VENDIDA ⭐" em dourado
-
-### ✅ **2. Nova Maquininha Adicionada - T3 Smart TON SUPER**
-- **Nome completo:** Maquininha T3 Smart TON SUPER
-- **Badge:** SUPER
-- **Slogan:** "Por dentro da T3 Smart"
-- **Link de compra:** Vinculado ao seu código de revendedor
-- **Características extraídas da imagem:**
-  - Bateria de longa duração
-  - Sistema Android rápido e inteligente
-  - Chip 4G grátis
-  - Conexão Wi-Fi
-  - Bobina grátis para comprovantes
-  - Pagamento por aproximação (NFC)
-  - Receba por Pix (QR Code ou aproximação)
-  - Tela touch para operações rápidas
+Todas as alterações foram realizadas **SOMENTE na página "Dicas"**, mantendo:
+- ✅ Layout original intacto
+- ✅ Responsividade preservada
+- ✅ Cores oficiais da Ton (verde: #00C853)
+- ✅ Todas as funcionalidades existentes
 
 ---
 
-## 📦 **ESTRUTURA DOS ARQUIVOS**
+## 🆕 O Que Foi Adicionado
 
-### 1️⃣ **index.html** + **script.js** (Recomendado)
-- **index.html:** Estrutura HTML completa
-- **script.js:** JavaScript separado para fácil manutenção
-- **Ideal para:** Sites hospedados com vários arquivos
+### 1. **Novos Botões na Página Dicas**
 
-### 2️⃣ **index-standalone.html** (Arquivo Único)
-- HTML + CSS + JavaScript tudo em um arquivo
-- **Ideal para:** Upload simples em GitHub Pages, Netlify, Vercel
+Foram criados **18 botões interativos** conforme o modelo fornecido:
 
----
+#### Características dos Botões:
+- 🎨 **Fundo branco** com **bordas verdes** (#00C853)
+- 📱 **Totalmente responsivos** (adaptam-se a celular, tablet e desktop)
+- ✨ **Efeito hover** elegante (elevação e mudança de cor)
+- 🔗 **Links funcionais** para todos os artigos listados
+- 🎯 **Ícones temáticos** para cada categoria
 
-## 📊 **ORDEM DE EXIBIÇÃO DAS MAQUININHAS**
+#### Lista Completa dos Botões:
 
-1. **T3 Smart TON PRÓ** (Destaque - Fundo Branco com borda verde) ⭐
-2. **T3** (Card normal)
-3. **T2** (Card normal)
-4. **T3 Smart TON SUPER** (Card normal) 🆕
-
----
-
-## 🔗 **LINKS DE COMPRA ATUALIZADOS**
-
-### **T3 Smart TON PRÓ:**
-```
-https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_SMART_POS_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor
-```
-
-### **T3:**
-```
-https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_S920_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor
-```
-
-### **T2:**
-```
-https://ton.com.br/checkout/cart/?productId=TONPRO_TIER_NOV24_D195_B&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonpro_tier_nov24_b&utm_medium=invite_share&utm_source=revendedor
-```
-
-### **T3 Smart TON SUPER:** 🆕
-```
-https://www.ton.com.br/checkout/cart/?referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonsuper&utm_medium=invite_share&utm_source=revendedor
-```
-
-### **Ton Max MEI/PJ:**
-```
-https://ton.com.br/checkout/cart/?productId=TONMAXMEI_TIER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonmaxmei_tier&utm_medium=invite_share&utm_source=revendedor
-```
+| Ícone | Título | Link |
+|-------|--------|------|
+| 📰 | TOP 10 artigos sobre vendas que você precisa conhecer | [agendor.com.br](https://www.agendor.com.br/blog/artigos-sobre-vendas/) |
+| 🚀 | 10 técnicas de vendas infalíveis | [meusucesso.com](https://meusucesso.com/artigos/10-tecnicas-de-vendas-infaliveis-23/) |
+| 🤝 | 7 técnicas de abordagem para não ser invasivo com seu cliente! | [zendesk.com.br](https://www.zendesk.com.br/blog/tecnicas-de-abordagem/) |
+| 💼 | 8 blogs brasileiros que todo empreendedor deveria ler | [sebrae.com.br](https://sebrae.com.br/sites/PortalSebrae/artigos/8-blogs-brasileiros-que-todo-empreendedor-deveria-ler,6307baede1306510VgnVCM1000004c00210aRCRD) |
+| 💳 | 5 vantagens que a maquininha de cartão oferece para sua loja | [mercadopago.com.br](https://empreendedores.mercadopago.com.br/vantagens-de-adquirir-uma-maquininha-de-cartao-para-sua-loja) |
+| 🎯 | Conheça as 8 principais técnicas de vendas | [sebrae.com.br](https://sebrae.com.br/sites/PortalSebrae/artigos/conheca-as-8-principais-tecnicas-de-vendas,a4f0bbd7f0f07810VgnVCM1000001b00320aRCRD) |
+| 👥 | Abordagem ao cliente: um momento crucial para a venda | [sebrae.com.br](https://sebrae.com.br/sites/PortalSebrae/artigos/abordagem-ao-cliente-um-momento-crucial-para-a-venda,5492219a524c4810VgnVCM100000d701210aRCRD) |
+| 📈 | Máquinas de cartão potencializam as vendas em até 30% | [sebrae.com.br](https://sebrae.com.br/sites/PortalSebrae/ufs/ac/artigos/maquinas-de-cartao-potencializam-as-vendas-em-ate-30,6869237d61dbc710VgnVCM100000d701210aRCRD) |
+| ✅ | Maquininha de cartão: vantagens e como usar no seu negócio | [nox.com.br](https://nox.com.br/maquininha-de-cartao-vantagens/) |
+| 🌟 | Conheça os benefícios da maquininha de cartão | [concil.com.br](https://www.concil.com.br/blog/conheca-os-beneficios-da-maquininha-de-cartao/) |
+| 💚 | Maquininha Ton Vale a Pena? 7 Vantagens em 2025 | [buscamaquininha.com.br](https://buscamaquininha.com.br/maquininha-ton-e-boa/) |
+| 📝 | Pra vender (Blog oficial Ton sobre vendas) | [blog.ton.com.br](https://blog.ton.com.br/categoria/para-vender/) |
+| 💰 | Maquininha Ton: veja as taxas, vantagens e modelos | [idinheiro.com.br](https://www.idinheiro.com.br/negocios/maquininha-ton/) |
+| ⚖️ | 8 Vantagens e Desvantagens da Maquininha T3 Ton | [maquininha.cc](https://maquininha.cc/vantagens-desvantagens-t3-ton/) |
+| 🎓 | Dicas de como vender Maquininha Ton: tenha uma renda | [maquininha.com.br](https://www.maquininha.com.br/como-vender-maquininha-ton/) |
+| 📚 | Blog do Ton | [blog.ton.com.br](https://blog.ton.com.br) |
+| 🔍 | A Maquininha Ton é boa? Confira! | [mobills.com.br](https://www.mobills.com.br/blog/maquininha-de-cartao/maquininha-ton/) |
+| ✍️ | 7 Copies Poderosas para Anunciar a Maquininha Ton e ... | [maquininhas.blog](https://maquininhas.blog/7-copies-poderosas-para-anunciar-a-maquininha-ton-e-impulsionar-suas-vendas/) |
 
 ---
 
-## 🎯 **CARACTERÍSTICAS T3 SMART TON SUPER** 🆕
+## 📁 Arquivos Modificados
 
-### **Especificações Técnicas:**
-- ⚡ **Bateria de longa duração** - Não fica sem bateria na hora de vender
-- 🤖 **Sistema Android** - Rápida e inteligente
-- 📶 **Chip 4G grátis** - Sem custo adicional
-- 📡 **Conexão Wi-Fi** - Nunca fique desconectado
-- 🖨️ **Bobina grátis** - Comprovantes impressos ou por SMS
+### 1. **index.html**
+- ✅ Adicionado CSS para os novos botões (`.tip-button`, `.tips-buttons-grid`)
+- ✅ Adicionado container `<div id="tips-buttons-container">` na seção Dicas
+- ✅ Mantido todo o layout e estrutura original
 
-### **Formas de Pagamento:**
-- 💳 **NFC** - Pagamento por aproximação (vendas rápidas)
-- 💵 **Pix** - QR Code ou por aproximação
-- 📱 **Tela Touch** - Interface ágil e precisa
+### 2. **script.js**
+- ✅ Adicionada nova propriedade `tipsButtons` no objeto `APP_DATA` com os 18 links
+- ✅ Criada função `renderTipsButtons()` para renderizar os botões dinamicamente
+- ✅ Mantidas todas as funções existentes
 
 ---
 
-## 🚀 **COMO USAR NO GITHUB**
+## 🎨 Detalhes do Design
 
-### **Opção 1: Arquivos Separados (Recomendado)**
+### Cores Utilizadas:
+- **Fundo dos botões**: `#FFFFFF` (branco)
+- **Borda dos botões**: `#00C853` (verde Ton)
+- **Hover - Fundo**: `#E5FFF3` (verde claro Ton)
+- **Hover - Borda**: `#006B24` (verde escuro Ton)
+- **Texto**: `#006B24` (verde escuro Ton)
+
+### Efeitos de Interação:
+- 🎯 **Hover**: Elevação suave + mudança de cor de fundo
+- 📱 **Transições**: Animações suaves de 0.3s
+- 💫 **Sombra**: Sombra sutil que aumenta no hover
+
+### Responsividade:
+- **Desktop**: Grid de 3 colunas
+- **Tablet**: Grid de 2 colunas
+- **Mobile**: 1 coluna (largura total)
+
+---
+
+## 🚀 Como Usar
+
+### 1. **Substituir Arquivos no GitHub**
 ```bash
-# Faça upload dos arquivos:
-index.html
-script.js
+# Substitua os arquivos no seu repositório:
+- index.html (arquivo atualizado)
+- script.js (arquivo atualizado)
 ```
 
-### **Opção 2: Arquivo Único**
+### 2. **Testar Localmente** (Opcional)
 ```bash
-# Faça upload apenas:
-index-standalone.html
-
-# Renomeie para index.html no GitHub
+# Abra o index.html no navegador
+# Clique em "Dicas" no menu
+# Verifique se os 18 botões aparecem corretamente
 ```
 
-### **Configurar GitHub Pages:**
-1. Vá em **Settings** do repositório
-2. Clique em **Pages**
-3. Selecione a branch **main** ou **master**
-4. Clique em **Save**
-5. Seu site estará disponível em: `https://seuusuario.github.io/nome-do-repo`
+### 3. **Verificar Funcionalidades**
+- ✅ Os botões aparecem na página "Dicas"
+- ✅ Todos os links abrem em nova aba
+- ✅ Efeito hover funciona corretamente
+- ✅ Layout é responsivo em todos os dispositivos
+- ✅ Cores seguem o padrão Ton (verde)
 
 ---
 
-## 🎨 **MUDANÇAS VISUAIS DETALHADAS**
+## 📱 Visualização
 
-### **Container T3 Smart TON PRÓ (Featured):**
-
-**ANTES:**
-```css
-background: linear-gradient(verde para verde escuro)
-color: white (texto branco)
-botão: dourado
+### Desktop:
+```
+┌────────────────────────────────────────────────┐
+│  [📰 TOP 10 artigos...]  [🚀 10 técnicas...]   │
+│  [🤝 7 técnicas...]      [💼 8 blogs...]       │
+│  [💳 5 vantagens...]     [🎯 Conheça...]       │
+└────────────────────────────────────────────────┘
 ```
 
-**DEPOIS:**
-```css
-background: white (fundo branco)
-color: #1A1A1A (texto preto)
-botão: verde (#00D700 para #00A84F)
+### Mobile:
+```
+┌──────────────────────┐
+│  [📰 TOP 10 artigos] │
+│  [🚀 10 técnicas...] │
+│  [🤝 7 técnicas...]  │
+│  [💼 8 blogs...]     │
+└──────────────────────┘
 ```
 
-### **Mantido:**
-- Badge dourado "⭐ MAIS VENDIDA ⭐"
-- Borda verde destacada
-- Layout em duas colunas
-- Efeito de destaque (transform: scale)
+---
+
+## ✅ Checklist de Verificação
+
+- [x] Botões criados com fundo branco
+- [x] Bordas verdes (#00C853) aplicadas
+- [x] 18 botões correspondendo aos 18 títulos/links
+- [x] Todos os links funcionais
+- [x] Layout original preservado
+- [x] Responsividade mantida
+- [x] Cores oficiais da Ton utilizadas
+- [x] Efeitos hover implementados
+- [x] Ícones temáticos adicionados
 
 ---
 
-## 📱 **RESPONSIVIDADE**
+## 📞 Suporte
 
-Todos os layouts se adaptam automaticamente para:
-- 📱 **Mobile** (celulares)
-- 📱 **Tablet** (tablets)
-- 💻 **Desktop** (computadores)
+Se precisar de qualquer ajuste adicional, é só solicitar!
 
----
-
-## ✅ **CHECKLIST DE VALIDAÇÃO**
-
-- ✅ T3 Smart renomeado para "T3 Smart TON PRÓ"
-- ✅ Container com fundo branco e texto preto
-- ✅ Botão verde ao invés de dourado
-- ✅ T3 Smart TON SUPER adicionado
-- ✅ Link de vendas TON SUPER configurado
-- ✅ Características da imagem implementadas
-- ✅ Ordem de exibição correta
-- ✅ Tabela de comparação atualizada
-- ✅ Design responsivo mantido
-
----
-
-## 🔄 **SINCRONIZAÇÃO COM TON OFICIAL**
-
-Os dados das maquininhas são baseados nas informações oficiais do site:
-- www.ton.com.br/maquininha/t2
-- www.ton.com.br/maquininha/t3
-- www.ton.com.br/maquininha/t3-smart
-
-**Imagens oficiais da Ton:**
-- T2: `sites-cms-deco-prd.s3.us-east-1.amazonaws.com/.../maquininha-t2-right.webp`
-- T3: `sites-cms-deco-prd.s3.us-east-1.amazonaws.com/.../maquininha-t3-right.webp`
-- T3 Smart: `sites-cms-deco-prd.s3.us-east-1.amazonaws.com/.../maquininha-t3-smart-right.webp`
-
----
-
-## 💰 **COMISSÕES**
-
-Todos os links de compra estão vinculados ao seu código de revendedor:
-```
-referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922
-```
-
-Quando um cliente clicar e comprar, você receberá sua comissão automaticamente! 🎉
-
----
-
-## 📞 **SUPORTE**
-
-Se precisar de ajustes adicionais, entre em contato ou modifique diretamente os arquivos:
-- `index.html` - Estrutura HTML
-- `script.js` - Lógica JavaScript e dados dos produtos
-- `index-standalone.html` - Versão tudo-em-um
-
----
-
-## 🎉 **PRONTO PARA USAR!**
-
-Seu site está 100% atualizado com:
-- ✅ T3 Smart TON PRÓ com design renovado
-- ✅ T3 Smart TON SUPER adicionado
-- ✅ Links de vendas configurados
-- ✅ Visual profissional
-- ✅ Responsivo para todos dispositivos
-
-**Boa sorte com suas vendas! 💚🚀**
+**Versão:** 1.0  
+**Data:** 31 de Outubro de 2025  
+**Desenvolvido para:** Ton Oferta Relâmpago
