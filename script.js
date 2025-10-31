@@ -134,7 +134,7 @@ const APP_DATA = {
       "id": "t3-smart-ton-super",
       "title": "T3 Smart Ton Super",
       "slogan": "Para quem está começando e precisa de uma máquina inteligente.",
-      "image": "https://ton.com.br/checkout/cart/?productId=TONSUPER_SMART_POS&referrer=62F0C435-81C7-40EF-BED6-75E60E7CC922&userAnticipation=0&userTag=tonsuper&utm_medium=invite_share&utm_source=revendedor",
+      "image": "https://sspark.genspark.ai/cfimages?u1=kf5OL78Yx%2BF%2FdzChTmf6DAdovgqDrEzSKscBgrM7iuyPXCcE23bhCw%2FNeNwvFejK8zL6d6hOyp6NQQv18%2B456vVjwRCl4QpeM5i451tT6%2F3%2BMJb1HZ7PnmdkJhOZzF2oFNHvLsLlRXwr2EddUhVW08jQx4c%2Fjh8ExsAmt3U9L%2FTMavXq4TBEzWvSsFU77ejCoQ%3D%3D&u2=YiCtHQmm3U0jHTSO&width=2560",
       "benefits": [
         "Ideal para iniciantes",
         "Aceita Pix e QR Code",
