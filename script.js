@@ -254,18 +254,18 @@ const APP_DATA = {
     },
     {
       icon: "💚",
-      title: "Maquininha Ton Vale a Pena? 7 Vantagens em 2025",
-      url: "https://buscamaquininha.com.br/maquininha-ton-e-boa/"
+      title: "Como Preencher a declaração do Imposto de Renda MEI 2025",
+      url: "https://blog.ton.com.br/web-stories/como-fazer-a-declaracao-do-imposto-de-renda-para-mei/"
     },
     {
       icon: "📝",
-      title: "Pra vender (Blog oficial Ton sobre vendas)",
-      url: "https://blog.ton.com.br/categoria/para-vender/"
+      title: "Vantagens e Riscos de ter um Sócio",
+      url: "https://blog.ton.com.br/web-stories/vantagens-e-riscos-de-ter-um-socio/"
     },
     {
       icon: "💰",
-      title: "Maquininha Ton: veja as taxas, vantagens e modelos ...",
-      url: "https://www.idinheiro.com.br/negocios/maquininha-ton/"
+      title: "MEI paga imposto de Renda?",
+      url: "https://blog.ton.com.br/web-stories/mei-paga-imposto-de-renda/"
     },
     {
       icon: "⚖️",
@@ -273,9 +273,9 @@ const APP_DATA = {
       url: "https://maquininha.cc/vantagens-desvantagens-t3-ton/"
     },
     {
-      icon: "🎓",
-      title: "Dicas de como vender Maquininha Ton: tenha uma renda ...",
-      url: "https://www.maquininha.com.br/como-vender-maquininha-ton/"
+      icon: "Com é a Declaração De Imposto de Renda para MEI",
+      title: "",
+      url: "https://blog.ton.com.br/web-stories/como-e-a-declaracao-de-imposto-para-mei/"
     },
     {
       icon: "📚",
@@ -291,26 +291,6 @@ const APP_DATA = {
       icon: "✍️",
       title: "7 Copies Poderosas para Anunciar a Maquininha Ton e ...",
       url: "https://maquininhas.blog/7-copies-poderosas-para-anunciar-a-maquininha-ton-e-impulsionar-suas-vendas/"
-    }
-  ],
-  articles: [
-    {
-      id: 3,
-      title: "Qual Maquininha Ton é Ideal para o seu MEI em 2025?",
-      content: "Para quem é Microempreendedor Individual (MEI), a escolha da maquininha certa faz toda a diferença. A **Ton Max MEI** é a solução perfeita, pois oferece taxas exclusivas e muito mais baixas para quem possui CNPJ ativo. Não perca tempo com burocracia e garanta o melhor custo-benefício para o seu negócio. Com a Ton, você tem a certeza de **taxas competitivas** e **sem aluguel**, permitindo que você foque no que realmente importa: as suas vendas. Além disso, o **recebimento rápido** garante o fluxo de caixa necessário para o crescimento.",
-      date: "2025-10-28"
-    },
-    {
-      id: 2,
-      title: "Ton ou SumUp: Onde Encontrar as Menores Taxas?",
-      content: "A batalha das maquininhas é acirrada, mas quando o assunto é taxa, a Ton se destaca. Enquanto a SumUp pode ter taxas competitivas em alguns cenários, a Ton oferece planos como o **Ton Pro** e **Ton Mega** que garantem as menores taxas do mercado, especialmente para quem tem um volume de vendas constante. Lembre-se: com a Ton, a máquina é **sem aluguel** e o **recebimento rápido** é uma realidade. Compare e comprove por que a Ton é a escolha inteligente para maximizar o seu lucro.",
-      date: "2025-10-27"
-    },
-    {
-      id: 1,
-      title: "Como Vender com Cartão Mesmo Sem Ter CNPJ?",
-      content: "Muitos vendedores autônomos e iniciantes pensam que é preciso ter CNPJ para aceitar cartão, mas isso não é verdade! A Ton permite que você use a maquininha com o seu CPF. Basta escolher um dos planos (como o **Ton Super** ou **Ton Pro**) e começar a vender. Embora as taxas para MEI sejam menores, vender com CPF ainda é uma excelente forma de profissionalizar o seu negócio. Aproveite as vantagens de ter uma máquina **sem aluguel** e com **recebimento rápido** para não perder nenhuma venda.",
-      date: "2025-10-26"
     }
   ]
 };
