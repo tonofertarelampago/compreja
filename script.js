@@ -273,8 +273,8 @@ const APP_DATA = {
       url: "https://maquininha.cc/vantagens-desvantagens-t3-ton/"
     },
     {
-      icon: "Com é a Declaração De Imposto de Renda para MEI",
-      title: "",
+      icon: "✅",
+      title: "Como é a Declaração De Imposto de Renda para MEI",
       url: "https://blog.ton.com.br/web-stories/como-e-a-declaracao-de-imposto-para-mei/"
     },
     {
@@ -286,6 +286,26 @@ const APP_DATA = {
       icon: "🔍",
       title: "A Maquininha Ton é boa? Confira!",
       url: "https://www.mobills.com.br/blog/maquininha-de-cartao/maquininha-ton/"
+    },
+    {
+      icon: "📰",
+      title: "Maquininha Ton: veja as taxas, vantagens e modelos",
+      url: "idinheiro.com.br"
+    },
+    {
+      icon: "🤝",
+      title: "Maquininha Ton Vale a Pena? 7 Vantagens em 2025",
+      url: "buscamaquininha.com.br"
+    },
+    {
+      icon: "💼",
+      title: "TOP 10 artigos sobre vendas que você precisa conhecer",
+      url: "https://www.agendor.com.br/blog/artigos-sobre-vendas/"
+    },
+    {
+      icon: "🌟",
+      title: "Maquininha sem aluguel: Confira as 5 melhores em 2025!",
+      url: "imaquininhas.com.br"
     },
     {
       icon: "✍️",
